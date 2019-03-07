@@ -1,0 +1,15 @@
+{
+	"name": "tfm-utility",
+	"version": "0.1.0",
+	"description": "A web application including some utilities for Transformice.",
+	"main": "app.js",
+	"dependencies": {
+		"xml-drawer": "^0.3.0"
+	},
+	"scripts": {
+		"start": "node app.js"
+	},
+	"author": "HunYan-io",
+	"repository": "https://github.com/HunYan-io/tfm-utility",
+	"license": "MIT"
+}
