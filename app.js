@@ -13,15 +13,14 @@ const throwError = function(res, errString) {
 
 const drawXml = function(data, res) {
 	if (data.xml) {
-			xmlDrawer(data.xml).then((canvas) => {
-				res.writeHead(200, {'Content-Type': 'image/png'});
-				canvas.createPNGStream().pipe(res);
-			}).catch((err) => {
-				throwError(res, "An error occured while drawing the xml.")
-			});
-		}
+		xmlDrawer(data.xml).then(canvas => {
+			res.writeHead(200, {'Content-Type': 'image/png'});
+			canvas.createPNGStream().pipe(res);
+		}).catch(err => {
+			throwError(res, "An error occured while drawing the xml.")
+		});
 	} else {
-		throwError(res, "No xml recieved.")
+		throwError(res, "No xml recieved.");
 	}
 }
 
