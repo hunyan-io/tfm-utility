@@ -13,13 +13,12 @@ const throwError = function(res, errString) {
 
 const drawXml = function(data, res) {
 	if (data.xml) {
-		try {
-			xmlDrawer(data.xml, (stream) => {
+			xmlDrawer(data.xml).then((canvas) => {
 				res.writeHead(200, {'Content-Type': 'image/png'});
-				stream.pipe(res);
+				canvas.createPNGStream().pipe(res);
+			}).catch((err) => {
+				throwError(res, "An error occured while drawing the xml.")
 			});
-		} catch (err) {
-			throwError(res, "Invalid xml.")
 		}
 	} else {
 		throwError(res, "No xml recieved.")
