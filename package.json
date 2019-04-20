@@ -4,7 +4,7 @@
 	"description": "A web application including some utilities for Transformice.",
 	"main": "app.js",
 	"dependencies": {
-		"xml-drawer": "^0.4.2"
+		"xml-drawer": "^0.4.3"
 	},
 	"scripts": {
 		"start": "node app.js"
